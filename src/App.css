@@ -7,6 +7,41 @@
   pointer-events: none;
 }
 
+.nombre {
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+.menu {
+  display: flex;
+}
+
+.enlaces {
+  width: 400px;
+  display: flex;
+}
+
+.enlaces a {
+  text-decoration: none;
+  color: grey;
+}
+
+.enlaces a:hover {
+  color: black;
+}
+
+ul {
+  width: 100%;
+}
+
+ul,
+li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
