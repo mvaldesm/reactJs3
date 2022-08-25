@@ -1,25 +1,19 @@
-import logo from "./logo.svg";
+import React from "react";
 import "./App.css";
-import Navbar from "./components/NavBar";
+import "bulma/css/bulma.min.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import NavBar from "./components/NavBar";
+import Hero from "./components/Hero";
+import ItemListContainer from "./components/ItemListContainer";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <>
-      <Navbar />
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>Desafío 2 - Curso ReactJS</p>
-          <a
-            className="App-link"
-            href="https://coderhouse.cl"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Ir a CoderHouse
-          </a>
-        </header>
-      </div>
+      <NavBar />
+      <Hero />
+      <ItemListContainer greeting="¡Hola! Bienvenido a nuestra tienda 👋" />
+      <Footer />
     </>
   );
 }
