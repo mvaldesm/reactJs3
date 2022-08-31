@@ -16,7 +16,7 @@ function ItemListContainer({ greeting }) {
         </div>
         <div className="column is-4-tablet is-3-desktop">
           <Producto
-            img="https://cdn.shopify.com/s/files/1/0288/3099/0420/products/s123001-4l-1-min-8e339d19-414d-4807-9075-a3260086118e_400x.jpg?v=1658882007"
+            img="https://cdn.shopify.com/s/files/1/0288/3099/0420/products/s123001-4l-1-min-8e339d19-414d-4807-9075-a3260086118e_9705a975-269e-478f-b053-8ffea334844d_400x.jpg?v=1661618120"
             alt="Proteína Carne"
             precio="$49,990"
             nombre="Proteína Carne"
