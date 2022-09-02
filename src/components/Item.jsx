@@ -1,7 +1,7 @@
 import React from "react";
 import ItemCount from "./ItemCount";
 
-function Producto({ img, alt, precio, nombre }) {
+function Item({ img, alt, precio, nombre }) {
   const onAdd = (cantidad) => {
     cantidad < 2
       ? alert(`Agregaste ${cantidad} producto.`)
@@ -31,4 +31,4 @@ function Producto({ img, alt, precio, nombre }) {
   );
 }
 
-export default Producto;
+export default Item;
