@@ -1,4 +1,4 @@
-# Desafío 1 Coderhouse
+# Curso ReactJS
 
 Hola, esta es mi primera app usando ReactJS.
 

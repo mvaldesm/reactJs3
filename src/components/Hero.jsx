@@ -6,7 +6,7 @@ function Hero() {
       <img
         alt="Crossfit Games 2022"
         className="hero-background is-transparent"
-        src="https://www.muscleandfitness.com/wp-content/uploads/2022/08/The-2022-NoBull-Crossfit-winners-running-to-the-finish-line.jpg?quality=86&strip=all"
+        src={require("../img/portada.webp")}
       />
       <div className="hero-body">
         <p className="title">repArep.com</p>

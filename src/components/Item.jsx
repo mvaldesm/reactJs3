@@ -13,7 +13,7 @@ function Item({ img, alt, precio, nombre }) {
         <img src={img} alt={alt} />
       </div>
       <div className="card-content has-text-centered">
-        <p>{precio}</p>
+        <p>${precio}</p>
         <p className="title is-size-5">{nombre}</p>
         <a href="/" className="has-text-grey">
           Ver

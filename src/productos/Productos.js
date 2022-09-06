@@ -2,33 +2,37 @@ const catalogo = [
   {
     id: 1,
     titulo: "Proteína Vegetal",
-    descripcion: "Proteína Vegetal",
+    descripcion:
+      "GOLD STANDARD 100% PLANT, es una proteína vegetal orgánica diseñada en base a arveja, arroz integral y sacha inchi, las que en conjunto aportan un perfil completo de aminoácidos esenciales para apoyar la recuperación muscular. Además es una excelente fuente de vitamina B12. Es ideal para cualquier persona que busque complementar el aporte proteico de su alimentación.",
     precio: "19,990",
-    img: "https://cdn.shopify.com/s/files/1/0288/3099/0420/products/s101038-15l-1-min-cfe49e33-0698-4281-bbeb-ed8f20ba5522_400x.jpg?v=1656539777",
+    img: require("../img/proteina-vegetal.webp"),
     alt: "Proteína Vegetal",
   },
   {
     id: 2,
     titulo: "Proteína Carne",
-    descripcion: "Proteína Carne",
+    descripcion:
+      "Carnivor es el primer suplemento proteico en polvo a base de carne de vacuno sin grasa ni colesterol. Contiene los niveles más altos de aminoácidos que otras fuentes proteicas, incluyendo la leche, el huevo y suero. Es un 350% más concentrado en aminoácidos y proporciona 20 veces más creatina que el filete de carne para saturar la musculatura de fuerza y fomentar el crecimiento muscular. Para reforzar la acción anabólica de carnivor, se ha añadido todos los BCAAs que tu organismo necesita para aumentar la síntesis de proteínas, disminuir el catabolismo, mejorar el rendimiento y reducir la fatiga muscular post entrenamiento. Cada porción de 37g contiene 2,5 g de creatina, 325% y 46% de la dosis diaria recomendada de vitamina B6 y Niacina.",
     precio: "49,990",
-    img: "https://cdn.shopify.com/s/files/1/0288/3099/0420/products/s123001-4l-1-min-8e339d19-414d-4807-9075-a3260086118e_400x.jpg?v=1661996525",
+    img: require("../img/proteina-de-carne.png"),
     alt: "Proteína Carne",
   },
   {
     id: 3,
     titulo: "Proteína Suero Leche",
-    descripcion: "Proteína Suero de Leche",
+    descripcion:
+      "SYNTHA 6, es una mezcla de proteínas de alto valor biológico y variable velocidad de absorción, aportando hasta 7 horas de efectividad. Además contiene 2 tipos de enzimas digestivas (papaína y bromelina) lo que garantiza una mejor digestión, absorción y rápida utilización de los aminoácidos que requiere el tejido muscular para lograr un óptimo desarrollo y recuperación muscular.",
     precio: "42,990",
-    img: "https://cdn.shopify.com/s/files/1/0288/3099/0420/products/s107006-5l-1-bd06f1e8-370b-4f7b-b1a0-4a1fa5e19521_9b3167e1-429e-4cd7-a0bc-23716aa69519_400x.jpg?v=1661230204",
+    img: require("../img/proteina-suero-leche.webp"),
     alt: "Proteína de Leche",
   },
   {
     id: 4,
     titulo: "Creatina",
-    descripcion: "Creatina",
+    descripcion:
+      "Crea Max es un suplemento de Creatina, reforzado con Glutamina para mejorar y acelerar la recuperación muscular y con Taurina para mejorar los niveles de energía. La contracción y relajación muscular se dan a través de la energía proveniente de las células a través del ATP (Adenosin Trifosfato). Los músculos tienen un limitado aporte de ATP y son rápidamente usados durante el ejercicio. La Creatina es un derivado de los aminoácidos que resintetiza el ATP (Adenosin Trifosfato) principal fuente de energía que necesita el músculo para realizar un movimiento. Por esta razón entrega un plus de energía a tus músculos cuando entrenas, aumentando rápidamente tu fuerza y potencia muscular.",
     precio: "31,990",
-    img: "https://cdn.shopify.com/s/files/1/0288/3099/0420/products/s103019-1000g-0-min-a8b79ab5-d4bb-4d06-8a79-420215b2db68_400x.jpg?v=1661200068",
+    img: require("../img/creatina.webp"),
     alt: "Creatina",
   },
 ];
