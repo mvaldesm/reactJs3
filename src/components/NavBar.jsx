@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import CartWidget from "./CartWidget";
 
 const NavBar = () => {
@@ -10,11 +11,11 @@ const NavBar = () => {
         aria-label="main navigation"
       >
         <div className="navbar-brand">
-          <a className="navbar-item" href="/">
-            <h1>
+          <Link to="/">
+            <h1 className="mt-3 pr-5 pl-5 has-text-white">
               <b>repArep.com</b>
             </h1>
-          </a>
+          </Link>
           <a
             role="button"
             className="navbar-burger"
@@ -31,17 +32,15 @@ const NavBar = () => {
 
         <div id="navbarBasicExample" className="navbar-menu">
           <div className="navbar-start">
-            <a className="navbar-item" href="/">
+            <Link to="/" className="mt-3 pr-3 has-text-white">
               Inicio
-            </a>
-
-            <a className="navbar-item" href="/">
+            </Link>
+            <Link to="/category/proteina" className="mt-3 pr-3 has-text-white">
               Productos
-            </a>
-
-            <a className="navbar-item" href="/">
-              Contacto
-            </a>
+            </Link>
+            <Link to="/category/creatina" className="mt-3 pr-3 has-text-white">
+              Creatina
+            </Link>
           </div>
 
           <div className="navbar-end">

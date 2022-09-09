@@ -1,25 +1,19 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import catalogo from "../productos/Productos";
+import { getProductosPorId } from "../productos/Productos";
+import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
 
 function ItemDetailContainer() {
-  const [item, setItem] = useState(catalogo);
+  const [elproducto, setElProducto] = useState();
+  const { productoId } = useParams();
   useEffect(() => {
-    const promesa = new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(catalogo);
-      }, 2000);
+    getProductosPorId(productoId).then((elproducto) => {
+      setElProducto(elproducto);
     });
-    promesa.then(() => {
-      setItem(catalogo[1]);
-    });
-    promesa.catch(() => {
-      console.log("Error al cargar el producto.");
-    });
-  });
+  }, [productoId]);
 
-  return <ItemDetail item={item} />;
+  return <ItemDetail {...elproducto} />;
 }
 
 export default ItemDetailContainer;

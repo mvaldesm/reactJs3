@@ -1,23 +1,39 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import catalogo from "../productos/Productos";
+import { useParams } from "react-router-dom";
+import { getProductos, getProductosPorCategoria } from "../productos/Productos";
 import ItemList from "./ItemList";
 
 function ItemListContainer({ greeting }) {
-  const [products, setProducts] = useState(catalogo);
+  const [products, setProducts] = useState([]);
+  const { categoryId } = useParams();
   useEffect(() => {
-    const promesaDos = new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(catalogo);
-      }, 2000);
-    });
-    promesaDos.then(() => {
-      setProducts(catalogo);
-    });
-    promesaDos.catch(() => {
-      console.log("Error al cargar los productos.");
-    });
-  });
+    if (!categoryId) {
+      getProductos().then((products) => {
+        setProducts(products);
+      });
+    } else {
+      getProductosPorCategoria(categoryId).then((products) => {
+        setProducts(products);
+      });
+    }
+  }, [categoryId]);
+
+  // Antiguo Codigo
+  // const [products, setProducts] = useState(catalogo);
+  // useEffect(() => {
+  //   const promesaDos = new Promise((resolve) => {
+  //     setTimeout(() => {
+  //       resolve(catalogo);
+  //     }, 2000);
+  //   });
+  //   promesaDos.then(() => {
+  //     setProducts(catalogo);
+  //   });
+  //   promesaDos.catch(() => {
+  //     console.log("Error al cargar los productos.");
+  //   });
+  // });
 
   return (
     <>
