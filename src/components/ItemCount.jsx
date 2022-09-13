@@ -9,22 +9,22 @@ const ItemCount = ({ onAdd, inicial, stock }) => {
 
   return (
     <>
-      <div className="columns has-text-centered is-mobile is-vcentered">
-        <div className="column has-text-centered">
+      <div className="columns is-mobile is-vcentered">
+        <div className="column is-2">
           <button
-            className="button is-black ml-2 mt-2 mb-2"
+            className="button is-black"
             onClick={() => addProduct(-1)}
             disabled={cantidad === inicial}
           >
             -
           </button>
         </div>
-        <div className="column has-text-centered">
-          <h1 className="title is-2 mt-1">{cantidad}</h1>
+        <div className="column is-3 has-text-centered">
+          <h1 className="title is-2 has-text-centered">{cantidad}</h1>
         </div>
-        <div className="column has-text-centered">
+        <div className="column is-3 has-text-centered">
           <button
-            className="button is-black mr-2 mt-2 mb-2"
+            className="button is-black"
             onClick={() => addProduct(+1)}
             disabled={cantidad === stock}
           >
@@ -33,13 +33,13 @@ const ItemCount = ({ onAdd, inicial, stock }) => {
         </div>
         <div className="column">
           <button
-            className="button is-link mt-2 mb-2"
+            className="button is-link is-fullwidth mt-2 mb-2"
             onClick={() => {
               onAdd(cantidad);
             }}
             disabled={stock === 0 ? true : null}
           >
-            Añadir
+            Añadir al carro
           </button>
         </div>
       </div>

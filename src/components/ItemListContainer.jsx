@@ -18,23 +18,6 @@ function ItemListContainer({ greeting }) {
       });
     }
   }, [categoryId]);
-
-  // Antiguo Codigo
-  // const [products, setProducts] = useState(catalogo);
-  // useEffect(() => {
-  //   const promesaDos = new Promise((resolve) => {
-  //     setTimeout(() => {
-  //       resolve(catalogo);
-  //     }, 2000);
-  //   });
-  //   promesaDos.then(() => {
-  //     setProducts(catalogo);
-  //   });
-  //   promesaDos.catch(() => {
-  //     console.log("Error al cargar los productos.");
-  //   });
-  // });
-
   return (
     <>
       <p className="mt-5 has-text-centered">{greeting}</p>
