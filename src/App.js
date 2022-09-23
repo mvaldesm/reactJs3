@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import Error from "./components/Error/Error";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import CartProvider from "./components/CartContext";
+import Cart from "./components/Cart";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
               element={<ItemListContainer />}
             />
             <Route path="/item/:productoId" element={<ItemDetailContainer />} />
+            <Route path="/cart" element={<Cart />} />
             <Route path="*" element={<Error />} />
           </Routes>
         </CartProvider>

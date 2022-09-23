@@ -1,12 +1,17 @@
 import React from "react";
+import { useCartContext } from "./CartContext";
+import { Link } from "react-router-dom";
 
 function CartWidget() {
+  const { totalProductos } = useCartContext();
   return (
-    <span className="icon-text">
-      <span className="icon is-medium">
-        <i className="fas fa-shopping-cart"></i>
+    <span className="icon-text has-text-white">
+      <span className="icon is-medium has-text-white">
+        <Link to="/cart">
+          <i className="fas fa-shopping-cart has-text-white"></i>
+        </Link>
       </span>
-      <p>1</p>
+      <p>{totalProductos() || ""}</p>
     </span>
   );
 }
