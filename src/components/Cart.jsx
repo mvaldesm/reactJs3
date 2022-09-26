@@ -24,8 +24,8 @@ function Cart() {
     <>
       <h1 className="title is-3 has-text-centered mt-5">Carro de compras</h1>
       {cart.map((item) => (
-        <div className="container box">
-          <div key={item.item.id} className="columns is-mobile is-centered">
+        <div key={item.item.id} className="container box">
+          <div className="columns is-mobile is-centered">
             <div className="column is-narrow">
               <img
                 src={item.item.img}
