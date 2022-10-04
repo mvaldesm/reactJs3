@@ -1,9 +1,35 @@
 import React from "react";
 import { useCartContext } from "./CartContext";
+import { collection, addDoc, getFirestore } from "firebase/firestore";
 import { Link } from "react-router-dom";
 
 function Cart() {
   const { cart, totalPrecio, removeItem } = useCartContext();
+
+  const orden = {
+    comprador: {
+      nombre: "Marco",
+      correo: "mvaldes@gmail.com",
+      telefono: "+56933088925",
+      domicilio: "Machalí, Chile",
+    },
+    items: cart.map((producto) => ({
+      id: producto.item.id,
+      titulo: producto.item.titulo,
+      precio: producto.item.precio,
+      cantidad: producto.cantidad,
+    })),
+    total: totalPrecio(),
+  };
+
+  const finalizarCompra = () => {
+    const db = getFirestore();
+    const ordenesCollection = collection(db, "ordenes");
+    addDoc(ordenesCollection, orden).then(({ id }) =>
+      console.log("ID orden de compra: " + id)
+    );
+  };
+
   if (cart.length === 0) {
     return (
       <>
@@ -55,6 +81,14 @@ function Cart() {
           <h2 className="title is-4 has-text-centered mt-2">
             <strong>Total:</strong> ${totalPrecio()}
           </h2>
+          <div className="columns is-mobile is-centered mt-5">
+            <button
+              onClick={finalizarCompra}
+              className="button is-link is-centered"
+            >
+              Generar orden de compra
+            </button>
+          </div>
         </div>
       </div>
     </>
