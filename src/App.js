@@ -11,6 +11,7 @@ import Error from "./components/Error/Error";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import CartProvider from "./components/CartContext";
 import Cart from "./components/Cart";
+import Checkout from "./components/Checkout";
 
 function App() {
   return (
@@ -31,11 +32,25 @@ function App() {
             />
             <Route
               path="/category/:categoryId"
-              element={<ItemListContainer />}
+              element={
+                <>
+                  <ItemListContainer />
+                  <Footer />
+                </>
+              }
             />
-            <Route path="/item/:productoId" element={<ItemDetailContainer />} />
+            <Route
+              path="/item/:productoId"
+              element={
+                <>
+                  <ItemDetailContainer />
+                  <Footer />
+                </>
+              }
+            />
             <Route path="/cart" element={<Cart />} />
             <Route path="*" element={<Error />} />
+            <Route path="/checkout" element={<Checkout />} />
           </Routes>
         </CartProvider>
       </BrowserRouter>

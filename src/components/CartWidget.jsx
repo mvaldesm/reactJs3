@@ -8,7 +8,7 @@ function CartWidget() {
     <span className="icon-text has-text-white">
       <span className="icon is-medium has-text-white">
         <Link to="/cart">
-          <i className="fas fa-shopping-cart has-text-white"></i>
+          <i className="fas fa-cart-shopping has-text-white"></i>
         </Link>
       </span>
       <p>{totalProductos() || ""}</p>

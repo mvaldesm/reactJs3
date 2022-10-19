@@ -1,11 +1,11 @@
 import React from "react";
 import { useCartContext } from "./CartContext";
 import { collection, addDoc, getFirestore } from "firebase/firestore";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Cart() {
   const { cart, totalPrecio, removeItem } = useCartContext();
-
+  const navigate = useNavigate();
   const orden = {
     comprador: {
       nombre: "Marco",
@@ -70,7 +70,7 @@ function Cart() {
                 className="button is-link is-small mt-2"
                 onClick={() => removeItem(item.item.id)}
               >
-                Eliminar
+                Quitar del carro
               </button>
             </div>
           </div>
@@ -83,7 +83,8 @@ function Cart() {
           </h2>
           <div className="columns is-mobile is-centered mt-5">
             <button
-              onClick={finalizarCompra}
+              onClick={() => navigate("/checkout")}
+              // onClick={finalizarCompra}
               className="button is-link is-centered"
             >
               Generar orden de compra

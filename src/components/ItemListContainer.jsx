@@ -8,13 +8,15 @@ import {
   query,
   where,
 } from "firebase/firestore";
-// import { getProductos, getProductosPorCategoria } from "../productos/Productos";
 import ItemList from "./ItemList";
+import Loader from "./Loader/Loader";
 
 function ItemListContainer({ greeting }) {
   const [products, setProducts] = useState([]);
+  const [loader, setLoader] = useState(false);
   const { categoryId } = useParams();
   useEffect(() => {
+    setLoader(true);
     const querydb = getFirestore();
     const queryCollection = collection(querydb, "suplementos");
     if (categoryId) {
@@ -22,33 +24,31 @@ function ItemListContainer({ greeting }) {
         queryCollection,
         where("category", "==", categoryId)
       );
-      getDocs(queryFiltro).then((res) =>
+      getDocs(queryFiltro).then((res) => {
         setProducts(
-          res.docs.map((producto) => ({ id: producto.id, ...producto.data() }))
-        )
-      );
+          res.docs.map((producto) => ({
+            id: producto.id,
+            ...producto.data(),
+          }))
+        );
+        setLoader(false);
+      });
     } else {
-      getDocs(queryCollection).then((res) =>
+      getDocs(queryCollection).then((res) => {
         setProducts(
-          res.docs.map((producto) => ({ id: producto.id, ...producto.data() }))
-        )
-      );
+          res.docs.map((producto) => ({
+            id: producto.id,
+            ...producto.data(),
+          }))
+        );
+        setLoader(false);
+      });
     }
-    // antiguo código:
-    // if (!categoryId) {
-    //   getProductos().then((products) => {
-    //     setProducts(products);
-    //   });
-    // } else {
-    //   getProductosPorCategoria(categoryId).then((products) => {
-    //     setProducts(products);
-    //   });
-    // }
   }, [categoryId]);
   return (
     <>
       <p className="mt-5 has-text-centered">{greeting}</p>
-      <ItemList products={products} />
+      {loader ? <Loader /> : <ItemList products={products} />}
     </>
   );
 }
